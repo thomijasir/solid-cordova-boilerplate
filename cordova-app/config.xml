@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SolidCordova</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="thomijasir@gmail.com" href="https://github.com/thomijasir">
+        Thomi Jasir
+    </author>
+    <!-- CONTENT INDEX HTML FOR PRODUCTIION -->
+    <content src="index.html" />
+    <!-- CONTENT SERVER FOR DEVELOPMENT ON THE FLY -->
+    <!-- <content src="http://192.168.0.149:5173" /> -->
+    <!-- DEFAULT CONFIGURATION -->
+    <access origin="*" />
+    <allow-intent href="http://*:*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+        <!-- <allow-intent href="market:*" /> -->
+        <edit-config xmlns:android="http://schemas.android.com/apk/res/android" file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+        <!-- <resource-file src="google-services.json" target="app/google-services.json" /> -->
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

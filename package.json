@@ -1,0 +1,40 @@
+{
+  "name": "solid-cordova-boilerplate",
+  "author": "Thomi Jasir<thomijasir@gmail.com>",
+  "description": "Pre-configuration Solid + Cordova Template",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite --host",
+    "preview": "vite preview",
+    "release": "yarn clean && tsc && vite build",
+    "debug:android": "yarn release && mv ./dist ./cordova-app/www && (cd cordova-app && cordova build android)",
+    "debug:ios": "yarn release && mv ./dist ./cordova-app/www && (cd cordova-app && cordova build ios)",
+    "clean": "rm -rf ./dist && rm -rf ./cordova-app/www",
+    "cordova:clean": "(cd cordova-app && cordova clean)",
+    "cordova:info": "(cd cordova-app && cordova info)",
+    "cordova:addPlatform:ios": "(cd cordova-app && cordova platform add ios)",
+    "cordova:addPlatformAndroid": "(cd cordova-app && cordova platform add android)",
+    "cordova:removePlatform:ios": "(cd cordova-app && cordova platform rm ios)",
+    "cordova:removePlatformAndroid": "(cd cordova-app && cordova platform rm android)",
+    "cordova:plugin:save": "(cd cordova-app && cordova plugin save)",
+    "cordova:emulate:ios": "(cd cordova-app && cordova emulate ios)"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.8.3",
+    "firebase": "^10.6.0",
+    "solid-js": "^1.8.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
+    "terser": "^5.22.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-solid": "^2.7.0"
+  }
+}
